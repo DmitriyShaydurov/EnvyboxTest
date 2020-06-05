@@ -37,6 +37,9 @@ class MessageController extends Controller
      */
     public function store(Request $request)
     {
+        
+        // since we have no requirements for a phone format validation is very basic. 
+        // For a real application, we could use regex 
         $validator = Validator::make($request->all(), [
             'name' => 'required|min:5',
             'phone' => 'required|numeric',
@@ -46,12 +49,9 @@ class MessageController extends Controller
         if ($validator->fails()) {
             return response($validator->errors());
         } else {
-            $message = PlacesToSave::createPlace('App\Message');
+            $message = PlacesToSave::createPlace('App\Fmessage');
             
             $message->name = $request->name;
-
-            //since we have no requirements for a phone format validation is very basic. 
-            //For a real application, we could use regex 
             $message->phone = $request->phone;
             $message->message = $request->message;
             $message->save();

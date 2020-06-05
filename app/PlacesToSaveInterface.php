@@ -1,4 +1,7 @@
 <?php
+
+namespace App;
+
 /**
  * @property string $name
  * @property string $phone
