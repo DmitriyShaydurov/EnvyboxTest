@@ -3,8 +3,7 @@
 namespace App;
 
 use Illuminate\Support\Facades\Storage;
-// use App\PlacesToSaveInterface;
-include('PlacesToSaveInterface.php');
+use App\PlacesToSaveInterface;
 
 class Fmessage implements PlacesToSaveInterface
 {
